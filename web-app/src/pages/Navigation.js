@@ -1,15 +1,16 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { Column, Row } from "simple-flexbox";
 //debug navigation panel
+var style = {
+    textAlign: 'center'
+};
 const Navigation = () => {
     return (
-        <div>
+        <div style={style}>
             Debug links to other pages
-            <br/>
-            <NavLink to = "/">Home</NavLink>
-            <br/>
-            <NavLink to = "/Login">Login</NavLink>
+            <br/>                
+            <NavLink to = "/"><button>Home</button></NavLink>
+            <NavLink to = "/Login"><button>Login</button></NavLink>
         </div>
     )
 }
