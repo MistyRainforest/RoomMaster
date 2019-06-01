@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch} from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect} from "react-router-dom";
 import './App.css';
 
 //import 
@@ -50,7 +50,7 @@ class App extends Component {
         {fire.auth().currentUser ? "Hello user: " + this.state.user.uid : ""}
         <Switch>
           <Route path="/" component = {Home} exact />
-          <Route path="/Login" component = {Login} />
+          <Route path="/Login" render={() => (fire.auth().currentUser ? (<Redirect to="/"/>) : (<Login/>))}/>
           <Route component = {Error404} />
         </Switch>
       </div>
