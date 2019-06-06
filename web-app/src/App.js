@@ -4,6 +4,9 @@ import './App.css';
 
 //import 
 import fire from './LoginComponents/Fire';
+import Toolbar from './Components/Toolbar/Toolbar';
+import SideDrawer from './Components/SideDrawer/SideDrawer';
+import Backdrop from './Components/Backdrop/Backdrop';
 
 //import pages
 import Login from "./pages/Login"; 
@@ -45,7 +48,10 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-      <div>
+      <div style={{marginTop: '64px', height: '100%'}}>
+        <Toolbar />
+        <SideDrawer />
+        <Backdrop />
         <Navigation user={"this.state.user"}/>
         {fire.auth().currentUser ? "Hello user: " + this.state.user.uid : ""}
         <Switch>
@@ -53,6 +59,7 @@ class App extends Component {
           <Route path="/Login" render={() => (fire.auth().currentUser ? (<Redirect to="/"/>) : (<Login/>))}/>
           <Route component = {Error404} />
         </Switch>
+        
       </div>
       </BrowserRouter>
     )
