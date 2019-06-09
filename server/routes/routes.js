@@ -5,7 +5,6 @@ var appRouter = function (app) {
 // What to send when API fetch uses 'POST' for url = /user
     app.post("/user", function(request, response) {
       console.log(request.body)
-      response.
       return response.json({
         uid: request.body.uid,
         name: 'john',
