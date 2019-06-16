@@ -22,6 +22,7 @@ class App extends Component {
     super(props);
     this.state = {
       user:{},
+      sideDrawerOpen: false,
     }
     //this.isLoggedIn = this.isLoggedIn.bind(this);
   }
@@ -44,14 +45,28 @@ class App extends Component {
   }
 
   //return if is logged in
+  drawerToggleClickHandler = () => {
+    this.setState((prevState) => {
+      return {sideDrawerOpen: !prevState.sideDrawerOpen}
+    });
+  };
+
+  backdropClickHandler = () => {
+    this.setState({sideDrawerOpen: false});
+  };
 
   render() {
+    let backdrop;
+
+    if(this.state.sideDrawerOpen) {
+      backdrop = <Backdrop click={this.backdropClickHandler} />
+    }
     return (
       <BrowserRouter>
       <div style={{marginTop: '64px', height: '100%'}}>
-        <Toolbar />
-        <SideDrawer />
-        <Backdrop />
+        <Toolbar drawerClickHandler = {this.drawerToggleClickHandler} />
+        <SideDrawer show={this.state.sideDrawerOpen} />
+        {backdrop}
         <Navigation user={"this.state.user"}/>
         {fire.auth().currentUser ? "Hello user: " + this.state.user.uid : ""}
         <Switch>
