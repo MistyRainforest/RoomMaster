@@ -1,3 +1,5 @@
+const firebaseDB = require("./fire");
+
 var appRouter = function (app) {
     app.get("/", function(request, response) {
       response.status(200).send("Welcome to RoomMaster REST API");
@@ -11,6 +13,20 @@ var appRouter = function (app) {
         eat: 'me'
       })
     });
+
+    app.post("/user/booking/", function(req, res) {
+      console.log("getting userbookings");
+      console.log(req.body.uid);
+      var bookings = [];
+      firebaseDB.collection('booking').where('user', '==', req.body.uid).get().then((data) => {
+        data.docs.forEach(doc => {
+          console.log(doc.data());
+          bookings.push(doc.data());
+        })
+      console.log(bookings);
+      return res.json(bookings);
+      });
+    })
   }
 
   

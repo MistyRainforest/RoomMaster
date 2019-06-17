@@ -1,5 +1,6 @@
 import React from "react";
 import fire from "../LoginComponents/Fire";
+import userDatabase from "../APICalls/user";
 
 //homepage placeholder
 class Home extends React.Component {

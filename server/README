@@ -5,10 +5,10 @@ API calls
 format:
     fetch([routehere], [options here])
 
-// example localhost:3001/user POST call
+// example localhost:3001/user/booking POST call to get user booking data
 
 var bod = {
-    uid: "USERIDHERE"
+    uid: "4J0OGcFCIMhXf5wmkRUK4zv2iqN2"
 }
 
 var options = {
@@ -18,7 +18,7 @@ var options = {
 
 }
 
-var response = await fetch('/user', options);
+var response = await fetch('/user/booking/', options);
 var data = await response.json();
 
 // the var data should be you user data in json form

@@ -15,7 +15,6 @@ import Navigation from "./pages/Navigation";
 import Error404 from "./pages/Error";
 
 
-
 //list all pages as navlinks and show navigation panel
 class App extends Component {
   constructor(props) {
