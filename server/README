@@ -22,3 +22,4 @@ var response = await fetch('/user/booking/', options);
 var data = await response.json();
 
 // the var data should be you user data in json form
+//YIaR7ZsY4pfPvyVSuibEuIbDwMA3

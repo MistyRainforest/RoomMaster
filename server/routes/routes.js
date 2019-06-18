@@ -14,6 +14,8 @@ var appRouter = function (app) {
       })
     });
 
+
+    //USER ROUTES
     app.post("/user/booking/", function(req, res) {
       console.log("getting userbookings");
       console.log(req.body.uid);
@@ -26,6 +28,25 @@ var appRouter = function (app) {
       console.log(bookings);
       return res.json(bookings);
       });
+    })
+
+    //ADMIN ROUTES
+    app.post("/admin/isAdmin", function(request, response){
+      console.log("Checking if Admin");
+      var toggle = [false];
+      firebaseDB.collection("admins").get().then((adminUid) => {
+        adminUid.docs.forEach((id) => {
+          if (request.body.uid === id.data()['admin']) {
+            toggle.pop();
+            toggle.push(true);
+          }
+        })
+      }).then(() => {
+        return response.json({
+          uid: request.body.uid,
+          admin: toggle[0]
+      })
+      })
     })
   }
 
