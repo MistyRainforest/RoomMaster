@@ -8,7 +8,9 @@ class Home extends React.Component {
         super(props);
         this.logout = this.logout.bind(this);
         this.logoutbutton = this.logoutbutton.bind(this);
+        this.userData = userDatabase.getUserData(fire.auth.currentUser);
     }
+    
 
     logout() {
         fire.auth().signOut();
@@ -25,6 +27,7 @@ class Home extends React.Component {
         return (
             <div>
                 <h1>Home Placeholder</h1>
+                <li>{this.userData.user}</li>
                 {this.logoutbutton()}
             </div>
         )

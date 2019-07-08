@@ -34,6 +34,7 @@ class App extends Component {
   //checks and sets user accessing the page
   authListener() {
     fire.auth().onAuthStateChanged((user) => {
+      console.log(user);
       if (user) {
         this.setState({ user });
       }
