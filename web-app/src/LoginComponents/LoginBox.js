@@ -33,6 +33,7 @@ class LoginBox extends React.Component {
             //box for login we can change the style later
            <div className="inner-container">
                <div className ="box">
+                   <div className = "sign"> Sign In</div>
                    <div className="input-group">
                        <label htmlFor="email">Email</label>
                        <input className="login-input" value={this.state.email} onChange={this.handleChange} type="text" name="email" placeholder="Email"/>

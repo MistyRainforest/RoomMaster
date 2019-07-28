@@ -65,6 +65,15 @@ $blue_theme: #70a1ff;
     visibility: visible;
 }
 
+.sign {
+    text-align: center;
+    padding-top: 10px;
+    color: #417cef;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 23px;
+}
+
 //Header
 .header {
     text-align: center;
@@ -72,7 +81,7 @@ $blue_theme: #70a1ff;
     margin-bottom: 17px;
     /* margin-left: 35px; */
     /* margin-right: 35px; */
-    font-family: Ozxgen, sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-size: 22px;
     border-bottom: 2px solid $blue_theme;
 }
@@ -92,7 +101,7 @@ $blue_theme: #70a1ff;
 
 //Label
 .login-label {
-    font-family: Oxygen, sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-size: 20px;
     font-weight: 600;
     padding-left: 5px;
@@ -105,7 +114,7 @@ $blue_theme: #70a1ff;
     border: 1px solid $blue_theme;
     transition: border 0.4s ease-out;
     padding: 13px;
-    font-family: Oxygen, sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-size: 19px;
     color: #3e3e42;
     background: rgba(15, 15, 15, 0.01);
@@ -122,7 +131,7 @@ $blue_theme: #70a1ff;
 
 //Input Placeholder
 .login-input::placeholder {
-    font-family: Oxygen, sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-size: 16px; //color: rgba(46, 213, 116, 0.839);
     color: rgba(15, 15, 15, 0.4);
 }
@@ -133,12 +142,15 @@ $blue_theme: #70a1ff;
     border: 0;
     font-size: 18px;
     border-radius: 3px;
-    font-family: Oxygen, sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     background-color: rgba(15, 15, 15, 0.03);
     margin-top: 20px;
     border: 2px solid #417cef;
     transition: background-color 0.3s ease-out;
     cursor: pointer;
+    position: relative;
+    left: 35%;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
 }
 
 .login-btn:hover,
